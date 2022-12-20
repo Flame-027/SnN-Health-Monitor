@@ -1,6 +1,6 @@
 ﻿using System.Net.NetworkInformation;
 
-namespace Network_Checkers
+namespace Network
 {
     public class NetPinger
     {
