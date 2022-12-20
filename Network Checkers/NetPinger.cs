@@ -15,7 +15,7 @@ namespace Network
 
         public NetPinger(string address, int timeout)
         {
-            if (string.IsNullOrEmpty(address) || timeout < 0) 
+            if (string.IsNullOrEmpty(address) || timeout <= 0) 
                 throw new InvalidOperationException();
 
             this.SendPing(address, timeout);
