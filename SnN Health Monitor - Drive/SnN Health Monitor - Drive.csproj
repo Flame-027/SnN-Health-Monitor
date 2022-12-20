@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{30086BBD-21CA-419F-BEBE-0F24585C98AF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SnN_Health_Monitor___Drive</RootNamespace>
+    <RootNamespace>Drive</RootNamespace>
     <AssemblyName>SnN Health Monitor - Drive</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -34,6 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Drive.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
