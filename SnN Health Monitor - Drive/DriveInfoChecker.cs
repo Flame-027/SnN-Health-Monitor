@@ -7,6 +7,8 @@ namespace Drive
 
         public long GetFreeSpace(string Driveletter)
         {
+            // Add validation for drive letter later
+
             var drive = new DriveInfo(Driveletter);
 
             if (!drive.IsReady) 
@@ -18,6 +20,8 @@ namespace Drive
 
         public long GetFreeSpace(string Driveletter, string unitOut)
         {
+            // Add validation for drive letter later
+
             var drive = new DriveInfo(Driveletter);
 
             if (!drive.IsReady) 
