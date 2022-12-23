@@ -18,5 +18,13 @@ namespace Drive
 
             return inputBytes / _unitsHashtable[unitOut];
         }
+
+        public static float GetUnitInBytes(string unit)
+        {
+            if (!_unitsHashtable.ContainsKey(unit))
+               throw new InvalidOperationException("The unit parameter is incorrect");
+
+            return _unitsHashtable[unit];
+        }
     }
 }
