@@ -8,15 +8,12 @@ namespace Drive
         public long GetFreeSpace(string Driveletter)
         {
             var drive = new DriveInfo(Driveletter);
-            long freeSpace;
 
             if (!drive.IsReady) 
                 throw new InvalidOperationException("The Drive is not ready or available");
 
-            freeSpace = BytesToBinaryUnits.Convert(drive.AvailableFreeSpace, new string("MB"));
+            long freeSpace = BytesToBinaryUnits.Convert(drive.AvailableFreeSpace, new string("MB"));
             return freeSpace;
         }
-
-
     }
 }
