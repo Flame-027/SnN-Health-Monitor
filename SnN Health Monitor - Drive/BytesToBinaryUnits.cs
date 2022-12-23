@@ -3,9 +3,20 @@ namespace Drive
 {
     public static class BytesToBinaryUnits
     {
-        public const int _kb = 1024;
-        public const int _mb = 1048576;
-        public const int _gb = 1073741824;
-        public const long _tb = 1099511627776;
+        private static readonly Dictionary<string, long> _unitsHashtable = new()
+        {
+            { "KB", 1024 },
+            { "MB", 1048576 },
+            { "GB", 1073741824 },
+            { "TB", 1099511627776 }
+        };
+
+        public static long Converter(long inputBytes, string unitOut)
+        {
+            if (!_unitsHashtable.ContainsKey(unitOut))
+                throw new InvalidOperationException("The unit parameter is incorrect");
+
+            return inputBytes / _unitsHashtable[unitOut];
+        }
     }
 }
