@@ -14,7 +14,7 @@ namespace Drive
             if (drive.IsReady)
                 rawFreeSpace = drive.AvailableFreeSpace;
 
-            freeSpace = (int)rawFreeSpace / MeasuringUnits.MB;
+            freeSpace = (int)rawFreeSpace / BytesToBinaryUnits._mb;
             return freeSpace;
         }
 
