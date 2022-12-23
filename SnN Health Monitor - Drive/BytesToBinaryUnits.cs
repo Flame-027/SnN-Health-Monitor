@@ -11,7 +11,7 @@ namespace Drive
             { "TB", 1099511627776 }
         };
 
-        public static long Converter(long inputBytes, string unitOut)
+        public static long Convert(long inputBytes, string unitOut)
         {
             if (!_unitsHashtable.ContainsKey(unitOut))
                 throw new InvalidOperationException("The unit parameter is incorrect");
