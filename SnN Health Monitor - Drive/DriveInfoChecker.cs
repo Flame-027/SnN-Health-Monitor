@@ -5,7 +5,7 @@ namespace Drive
     public class DriveInfoChecker
     {
 
-        public int GetFreeSpace(string Driveletter)
+        public long GetFreeSpace(string Driveletter)
         {
             var drive = new DriveInfo(Driveletter);
             long freeSpace;
@@ -14,7 +14,8 @@ namespace Drive
                 throw new InvalidOperationException();
 
             freeSpace = drive.AvailableFreeSpace / BytesToBinaryUnits._mb;
-            return (int)freeSpace;
+
+            return freeSpace;
         }
 
 
