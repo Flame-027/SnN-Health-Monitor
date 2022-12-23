@@ -13,8 +13,7 @@ namespace Drive
             if (!drive.IsReady) 
                 throw new InvalidOperationException();
 
-            freeSpace = drive.AvailableFreeSpace / BytesToBinaryUnits._mb;
-
+            freeSpace = BytesToBinaryUnits.Convert(drive.AvailableFreeSpace, new string("MB"));
             return freeSpace;
         }
 
