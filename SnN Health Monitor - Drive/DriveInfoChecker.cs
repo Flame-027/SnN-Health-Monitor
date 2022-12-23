@@ -8,14 +8,13 @@ namespace Drive
         public int GetFreeSpace(string Driveletter)
         {
             var drive = new DriveInfo(Driveletter);
-            long rawFreeSpace = 0;
-            int freeSpace;
+            long freeSpace;
 
-            if (drive.IsReady)
-                rawFreeSpace = drive.AvailableFreeSpace;
+            if (!drive.IsReady) 
+                throw new InvalidOperationException();
 
-            freeSpace = (int)rawFreeSpace / BytesToBinaryUnits._mb;
-            return freeSpace;
+            freeSpace = drive.AvailableFreeSpace / BytesToBinaryUnits._mb;
+            return (int)freeSpace;
         }
 
 
