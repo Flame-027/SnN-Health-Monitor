@@ -1,7 +1,7 @@
 ﻿
 namespace Drive
 {
-    public static class MeasuringUnits
+    public static class BytesToBinaryUnits
     {
         public const int KB = 1024;
         public const int MB = 1048576;
