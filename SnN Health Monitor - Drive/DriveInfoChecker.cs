@@ -94,6 +94,6 @@ namespace Drive
             return totalSize;
         }
 
-        }
+
     }
 }
