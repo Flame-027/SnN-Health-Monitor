@@ -4,8 +4,7 @@ namespace Drive
 {
     public class DriveInfoChecker
     {
-
-        public long GetFreeSpace(string Driveletter)
+        public static long GetFreeSpace(string Driveletter)
         {
             // Add validation for drive letter later
 
@@ -18,7 +17,7 @@ namespace Drive
             return freeSpace;
         }
 
-        public long GetFreeSpace(string Driveletter, string unitOut)
+        public static long GetFreeSpace(string Driveletter, string unitOut)
         {
             // Add validation for drive letter later
 
