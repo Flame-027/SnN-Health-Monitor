@@ -13,8 +13,7 @@ namespace Drive
             if (!drive.IsReady) 
                 throw new InvalidOperationException("The Drive is not ready or available");
 
-            long freeSpace = BytesToBinaryUnits.Convert(drive.TotalFreeSpace, new string("MB"));
-            return freeSpace;
+            return drive.TotalFreeSpace;
         }
 
         public static long GetFreeSpace(string driveLetter, string unitOut)
@@ -30,6 +29,17 @@ namespace Drive
             return freeSpace;
         }
 
+        public static byte GetFreeSpacePercentage (string driveLetter)
+        {
+            // Add validation for drive letter later
+
+            var drive = new DriveInfo(driveLetter);
+            
+            var freeSpace = GetFreeSpace(driveLetter);
+            var totalSpace = 
+        }
+
+
         public static long GetAvailableSpace(string driveLetter)
         {
             // Add validation for drive letter later
@@ -39,8 +49,7 @@ namespace Drive
             if (!drive.IsReady) 
                 throw new InvalidOperationException("The Drive is not ready or available");
 
-            long availableSpace = BytesToBinaryUnits.Convert(drive.AvailableFreeSpace, new string("MB"));
-            return availableSpace;
+            return drive.AvailableFreeSpace;
         }
 
         public static long GetAvailableSpace(string driveLetter, string unitOut)
@@ -65,8 +74,7 @@ namespace Drive
             if (!drive.IsReady) 
                 throw new InvalidOperationException("The Drive is not ready or available");
 
-            long totalSize = BytesToBinaryUnits.Convert(drive.TotalSize, new string("MB"));
-            return totalSize;
+            return drive.TotalSize;
         }
 
         public static long GetTotalSize(string driveLetter, string unitOut)
@@ -74,13 +82,14 @@ namespace Drive
             // Add validation for drive letter later
 
             var drive = new DriveInfo(driveLetter);
-            
+
             if (!drive.IsReady) 
                 throw new InvalidOperationException("The Drive is not ready or available");
 
             long totalSize = BytesToBinaryUnits.Convert(drive.TotalSize, unitOut));
             return totalSize;
         }
+
         }
     }
 }
