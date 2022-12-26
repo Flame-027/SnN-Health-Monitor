@@ -3,7 +3,7 @@ namespace Drive
 {
     public static class BytesToBinaryUnits
     {
-        private static readonly Dictionary<string, long> _unitsHashtable = new()
+        private static readonly Dictionary<string, long> _unitsHashTable = new()
         {
             { "KB", 1024 },
             { "MB", 1048576 },
@@ -13,18 +13,18 @@ namespace Drive
 
         public static long Convert(long inputBytes, string unitOut)
         {
-            if (!_unitsHashtable.ContainsKey(unitOut))
+            if (!_unitsHashTable.ContainsKey(unitOut))
                 throw new InvalidOperationException("The unit parameter is incorrect");
 
-            return inputBytes / _unitsHashtable[unitOut];
+            return inputBytes / _unitsHashTable[unitOut];
         }
 
         public static float GetUnitInBytes(string unit)
         {
-            if (!_unitsHashtable.ContainsKey(unit))
+            if (!_unitsHashTable.ContainsKey(unit))
                throw new InvalidOperationException("The unit parameter is incorrect");
 
-            return _unitsHashtable[unit];
+            return _unitsHashTable[unit];
         }
     }
 }
