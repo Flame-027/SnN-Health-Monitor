@@ -2,7 +2,7 @@
 
 namespace Drive
 {
-    public class DriveInfoChecker
+    public static class DriveInfoChecker
     {
         public static long GetFreeSpace(string driveLetter)
         {
@@ -93,7 +93,5 @@ namespace Drive
             long totalSize = BytesToBinaryUnits.Convert(drive.TotalSize, unitOut);
             return totalSize;
         }
-
-
     }
 }
