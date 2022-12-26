@@ -55,5 +55,32 @@ namespace Drive
             long availableSpace = BytesToBinaryUnits.Convert(drive.AvailableFreeSpace, unitOut);
             return availableSpace;
         }
+
+        public static long GetTotalSize(string driveLetter)
+        {
+            // Add validation for drive letter later
+
+            var drive = new DriveInfo(driveLetter);
+            
+            if (!drive.IsReady) 
+                throw new InvalidOperationException("The Drive is not ready or available");
+
+            long totalSize = BytesToBinaryUnits.Convert(drive.TotalSize, new string("MB"));
+            return totalSize;
+        }
+
+        public static long GetTotalSize(string driveLetter, string unitOut)
+        {
+            // Add validation for drive letter later
+
+            var drive = new DriveInfo(driveLetter);
+            
+            if (!drive.IsReady) 
+                throw new InvalidOperationException("The Drive is not ready or available");
+
+            long totalSize = BytesToBinaryUnits.Convert(drive.TotalSize, unitOut));
+            return totalSize;
+        }
+        }
     }
 }
