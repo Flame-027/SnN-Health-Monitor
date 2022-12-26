@@ -9,11 +9,11 @@ namespace Drive
             // Add validation for drive letter later
 
             var drive = new DriveInfo(driveLetter);
-
+            
             if (!drive.IsReady) 
                 throw new InvalidOperationException("The Drive is not ready or available");
 
-            long freeSpace = BytesToBinaryUnits.Convert(drive.AvailableFreeSpace, new string("MB"));
+            long freeSpace = BytesToBinaryUnits.Convert(drive.TotalFreeSpace, new string("MB"));
             return freeSpace;
         }
 
@@ -26,7 +26,7 @@ namespace Drive
             if (!drive.IsReady) 
                 throw new InvalidOperationException("The Drive is not ready or available");
 
-            long freeSpace = BytesToBinaryUnits.Convert(drive.AvailableFreeSpace, unitOut);
+            long freeSpace = BytesToBinaryUnits.Convert(drive.TotalFreeSpace, unitOut);
             return freeSpace;
         }
     }
