@@ -16,7 +16,7 @@ namespace Drive
             return drive.TotalFreeSpace;
         }
 
-        public static long GetFreeSpace(string driveLetter, string unitOut)
+        public static long GetFreeSpace(string driveLetter, BinaryUnitsCode unitOut)
         {
             // Add validation for drive letter later
 
@@ -56,7 +56,7 @@ namespace Drive
             return drive.AvailableFreeSpace;
         }
 
-        public static long GetAvailableSpace(string driveLetter, string unitOut)
+        public static long GetAvailableSpace(string driveLetter, BinaryUnitsCode unitOut)
         {
             // Add validation for drive letter later
 
@@ -81,7 +81,7 @@ namespace Drive
             return drive.TotalSize;
         }
 
-        public static long GetTotalSpace(string driveLetter, string unitOut)
+        public static long GetTotalSpace(string driveLetter, BinaryUnitsCode unitOut)
         {
             // Add validation for drive letter later
 
@@ -90,7 +90,7 @@ namespace Drive
             if (!drive.IsReady) 
                 throw new InvalidOperationException("The Drive is not ready or available");
 
-            long totalSize = BytesToBinaryUnits.Convert(drive.TotalSize, unitOut));
+            long totalSize = BytesToBinaryUnits.Convert(drive.TotalSize, unitOut);
             return totalSize;
         }
 
