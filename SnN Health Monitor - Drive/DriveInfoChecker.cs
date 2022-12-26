@@ -29,6 +29,21 @@ namespace Drive
             return freeSpace;
         }
 
+        public static byte GetFreeSpacePercentage (string driveLetter)
+        {
+            // Add validation for drive letter later
+
+            var drive = new DriveInfo(driveLetter);
+            
+            long freeSpace = GetFreeSpace(driveLetter);
+            long totalSpace = GetTotalSpace(driveLetter);
+
+            double totalPercentage = (freeSpace / totalSpace) * 100;
+            totalPercentage = Math.Round(totalPercentage, 0, MidpointRounding.AwayFromZero);
+
+            return (byte)totalPercentage;
+        }
+
         public static long GetAvailableSpace(string driveLetter)
         {
             // Add validation for drive letter later
