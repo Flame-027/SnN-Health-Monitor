@@ -29,17 +29,6 @@ namespace Drive
             return freeSpace;
         }
 
-        public static byte GetFreeSpacePercentage (string driveLetter)
-        {
-            // Add validation for drive letter later
-
-            var drive = new DriveInfo(driveLetter);
-            
-            var freeSpace = GetFreeSpace(driveLetter);
-            var totalSpace = 
-        }
-
-
         public static long GetAvailableSpace(string driveLetter)
         {
             // Add validation for drive letter later
@@ -65,7 +54,7 @@ namespace Drive
             return availableSpace;
         }
 
-        public static long GetTotalSize(string driveLetter)
+        public static long GetTotalSpace(string driveLetter)
         {
             // Add validation for drive letter later
 
@@ -77,7 +66,7 @@ namespace Drive
             return drive.TotalSize;
         }
 
-        public static long GetTotalSize(string driveLetter, string unitOut)
+        public static long GetTotalSpace(string driveLetter, string unitOut)
         {
             // Add validation for drive letter later
 
