@@ -4,11 +4,11 @@ namespace Drive
 {
     public class DriveInfoChecker
     {
-        public static long GetFreeSpace(string Driveletter)
+        public static long GetFreeSpace(string driveLetter)
         {
             // Add validation for drive letter later
 
-            var drive = new DriveInfo(Driveletter);
+            var drive = new DriveInfo(driveLetter);
 
             if (!drive.IsReady) 
                 throw new InvalidOperationException("The Drive is not ready or available");
@@ -17,11 +17,11 @@ namespace Drive
             return freeSpace;
         }
 
-        public static long GetFreeSpace(string Driveletter, string unitOut)
+        public static long GetFreeSpace(string driveLetter, string unitOut)
         {
             // Add validation for drive letter later
 
-            var drive = new DriveInfo(Driveletter);
+            var drive = new DriveInfo(driveLetter);
 
             if (!drive.IsReady) 
                 throw new InvalidOperationException("The Drive is not ready or available");
