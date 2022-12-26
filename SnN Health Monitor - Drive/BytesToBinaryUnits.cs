@@ -3,7 +3,7 @@ namespace Drive
 {
     public static class BytesToBinaryUnits
     {
-        private static readonly long[] _unitsArray = 
+        private static readonly long[] _unitsArray = new long[4]
         {
             1024,
             1048576,                            
