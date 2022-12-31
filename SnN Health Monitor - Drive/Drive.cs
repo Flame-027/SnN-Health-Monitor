@@ -8,7 +8,7 @@
 
         public Drive(string driveLetter)
         {
-            this.DriveLetter = driveLetter;
+            DriveLetter = driveLetter;
             _driveinfo = new(driveLetter);
         }
     }
