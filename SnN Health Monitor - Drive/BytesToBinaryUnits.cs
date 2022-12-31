@@ -16,7 +16,7 @@ namespace Drive
         public static long Convert(long inputBytes, BinaryUnitsCode unitOut)
         {
             if (inputBytes <= 0)
-                throw new InvalidOperationException("The inputedBytes paramter is not valid");
+                throw new ArgumentOutOfRangeException("The inputed Bytes need to be larger than 0 in order to convert them");
 
             return inputBytes / _unitsArray[(byte)unitOut];
         }
