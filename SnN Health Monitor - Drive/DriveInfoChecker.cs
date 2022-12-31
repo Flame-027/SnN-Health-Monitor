@@ -54,7 +54,19 @@ namespace Drive
             return freeSpace;
         }
 
-        public static byte GetFreeSpacePercentage (string driveLetter)
+        public  byte GetFreeSpacePercentage()
+        {
+            // Add validation for drive letter later
+            
+            long freeSpace = GetFreeSpace();
+            long totalSpace = GetTotalSpace();
+
+            double totalPercentage = (freeSpace / totalSpace) * 100;
+            totalPercentage = Math.Round(totalPercentage, 0, MidpointRounding.AwayFromZero);
+
+            return (byte)totalPercentage;
+        }
+        public static byte GetFreeSpacePercentage(string driveLetter)
         {
             // Add validation for drive letter later
             
