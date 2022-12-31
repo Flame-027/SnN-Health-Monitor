@@ -9,7 +9,7 @@
         public Drive(string driveLetter)
         {
             this.DriveLetter = driveLetter;
-            this._driveinfo = new(driveLetter);
+            _driveinfo = new(driveLetter);
         }
     }
 }
