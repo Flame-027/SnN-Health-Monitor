@@ -50,8 +50,6 @@ namespace Drive
         public static byte GetFreeSpacePercentage (string driveLetter)
         {
             // Add validation for drive letter later
-
-            var drive = new DriveInfo(driveLetter);
             
             long freeSpace = GetFreeSpace(driveLetter);
             long totalSpace = GetTotalSpace(driveLetter);
