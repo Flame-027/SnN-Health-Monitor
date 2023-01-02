@@ -13,7 +13,7 @@ namespace Drive
 
         // this list gets indexed by an enum as some values are too large for it to hold.
 
-        public static long Convert(long inputBytes, BinaryUnitsCode unitOut)
+        public static float Convert(long inputBytes, BinaryUnitsCode unitOut)
         {
             if (inputBytes <= 0)
                 throw new ArgumentOutOfRangeException("The inputed Bytes need to be larger than 0 in order to convert them");
