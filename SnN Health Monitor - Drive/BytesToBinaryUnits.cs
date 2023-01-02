@@ -18,7 +18,7 @@ namespace Drive
             if (inputBytes <= 0)
                 throw new ArgumentOutOfRangeException("The inputed Bytes need to be larger than 0 in order to convert them");
 
-            return inputBytes / _unitsArray[(byte)unitOut];
+            return (float) inputBytes / _unitsArray[(byte)unitOut];
         }
 
         public static float GetUnitInBytes(BinaryUnitsCode unit)
